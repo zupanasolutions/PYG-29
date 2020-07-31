@@ -32,5 +32,7 @@ Requirements to run the program
 Clone the codes
 1. Create a folder in your local directory
 2. Open your Git and change directory into the folder created in step 1
-3. Type git clone 
+3. Type git clone https://github.com/zupanasolutions/PYG-29.git to clone the project into your local director
+4. Execute the work_pay file to run the program
+5. The excel file will be generated on the same directory when the program is run
 
