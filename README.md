@@ -25,9 +25,9 @@ Task
 
 
 Requirements to run the program
-1.Any operating system with python installed. Latest version of python preferred. Download it from https://www.python.org/downloads/
-2.Install the latest version of git
-2.Install the following modules - datetime, xlwt, and workbook using the pip install command
+1. Any operating system with python installed. Latest version of python preferred. Download it from https://www.python.org/downloads/
+2. Install the latest version of git
+2. Install the following modules - datetime, xlwt, and workbook using the pip install command
 
 Clone the codes
 1. Create a folder in your local directory
