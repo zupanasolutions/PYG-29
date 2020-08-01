@@ -3,7 +3,7 @@ Python Time Tracker
 
 problem statement
 
-Pascal, Prince, and Naa recently started a consulting business where he is paid based on the number of hours and minutes he works on client projects.
+Pascal, Prince, and Naa recently started a consulting business. Nana, one of their employees, is paid based on the number of hours and minutes he works on client projects.
 
 He needs a time tracking program, where he enters the date and the time he started working on a task, and then the date and time when he finished a particular task. 
 
