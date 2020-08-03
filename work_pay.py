@@ -9,7 +9,9 @@ from xlwt import Workbook
 wb = Workbook() 
 
 # Specifying style 
-style = xlwt.easyxf('font: bold 1') 
+style = xlwt.easyxf('font: bold 1')
+date_style = xlwt.easyxf('font: bold 1')
+date_style.num_format_str = 'YYYY-MMM-D h:mm:ss'
   
 # Use add_sheet to create sheet. 
 working_hour_sheet = wb.add_sheet('Working_Hours') 
@@ -43,21 +45,20 @@ second = int(input('Enter an Second:\t'))
 end_date = datetime.datetime(year, month, day, hour, minute, second)
 diff = end_date-start_date
 
-diff_seconds = diff.seconds/60
-diff_date_hours = diff_seconds/60
+diff_date_hours = diff.total_seconds() / 3600
 
 gross_pay = 5*diff_date_hours
 gross_pay = '${}'.format(gross_pay)
 
-#Write the details to excel file
-working_hour_sheet.write(1, 0, start_date, style)
-working_hour_sheet.write(1, 1, end_date, style)
+# Write the details to excel file
+working_hour_sheet.write(1, 0, start_date, date_style)
+working_hour_sheet.write(1, 1, end_date, date_style)
 working_hour_sheet.write(1, 2, gross_pay, style)
 
-#Save the workbook
+# Save the workbook
 wb.save('xlwt work.xls')
 
-#Print the resulst
+# Print the resulst
 print('You have worked for a total of {} hours on this task '.format(diff_date_hours))
 print('Your total pay for working from {} to {} is ${} '.format(start_date, end_date, gross_pay))
 
