@@ -139,69 +139,69 @@ def main():
 
 main()
 
-#Import the datetime module
-import datetime
+# #Import the datetime module
+# import datetime
 
-#Import the excel module in python with a workbook
-import xlwt 
-from xlwt import Workbook 
+# #Import the excel module in python with a workbook
+# import xlwt 
+# from xlwt import Workbook 
   
-#Workbook is created 
-wb = Workbook() 
+# #Workbook is created 
+# wb = Workbook() 
 
-# Specifying style 
-style = xlwt.easyxf('font: bold 1')
-date_style = xlwt.easyxf('font: bold 1')
-date_style.num_format_str = 'YYYY-MMM-D h:mm:ss'
+# # Specifying style 
+# style = xlwt.easyxf('font: bold 1')
+# date_style = xlwt.easyxf('font: bold 1')
+# date_style.num_format_str = 'YYYY-MMM-D h:mm:ss'
   
-# Use add_sheet to create sheet. 
-working_hour_sheet = wb.add_sheet('Working_Hours') 
+# # Use add_sheet to create sheet. 
+# working_hour_sheet = wb.add_sheet('Working_Hours') 
 
-working_hour_sheet.write(0, 0, 'Start_Date_Time', style)
-working_hour_sheet.write(0, 1, 'End_Date_Time', style)
-working_hour_sheet.write(0, 2, 'Pay_Amount_Due', style)
-
-
-print('Enter the start date by following the prompts below:\n')
-
-year = int(input('Enter a year:\t'))
-month = int(input('Enter a month:\t'))
-day = int(input('Enter a day:\t'))
-hour = int(input('Enter an Hour:\t'))
-minute = int(input('Enter an Minute:\t'))
-second = int(input('Enter an Second:\t'))
-
-start_date = datetime.datetime(year, month, day, hour, minute, second)
+# working_hour_sheet.write(0, 0, 'Start_Date_Time', style)
+# working_hour_sheet.write(0, 1, 'End_Date_Time', style)
+# working_hour_sheet.write(0, 2, 'Pay_Amount_Due', style)
 
 
-print('Enter the end date by following the prompts below:\t')
+# print('Enter the start date by following the prompts below:\n')
 
-year = int(input('Enter a year:\t'))
-month = int(input('Enter a month:\t'))
-day = int(input('Enter a day:\t'))
-hour = int(input('Enter an Hour:\t'))
-minute = int(input('Enter an Minute:\t'))
-second = int(input('Enter an Second:\t'))
+# year = int(input('Enter a year:\t'))
+# month = int(input('Enter a month:\t'))
+# day = int(input('Enter a day:\t'))
+# hour = int(input('Enter an Hour:\t'))
+# minute = int(input('Enter an Minute:\t'))
+# second = int(input('Enter an Second:\t'))
 
-end_date = datetime.datetime(year, month, day, hour, minute, second)
-diff = end_date-start_date
+# start_date = datetime.datetime(year, month, day, hour, minute, second)
 
-diff_date_hours = diff.total_seconds() / 3600
 
-gross_pay = 5*diff_date_hours
-gross_pay = '${}'.format(gross_pay)
+# print('Enter the end date by following the prompts below:\t')
 
-# Write the details to excel file
-working_hour_sheet.write(1, 0, start_date, date_style)
-working_hour_sheet.write(1, 1, end_date, date_style)
-working_hour_sheet.write(1, 2, gross_pay, style)
+# year = int(input('Enter a year:\t'))
+# month = int(input('Enter a month:\t'))
+# day = int(input('Enter a day:\t'))
+# hour = int(input('Enter an Hour:\t'))
+# minute = int(input('Enter an Minute:\t'))
+# second = int(input('Enter an Second:\t'))
 
-# Save the workbook
-wb.save('xlwt work.xls')
+# end_date = datetime.datetime(year, month, day, hour, minute, second)
+# diff = end_date-start_date
 
-# Print the resulst
-print('You have worked for a total of {} hours on this task '.format(diff_date_hours))
-print('Your total pay for working from {} to {} is ${} '.format(start_date, end_date, gross_pay))
+# diff_date_hours = diff.total_seconds() / 3600
+
+# gross_pay = 5*diff_date_hours
+# gross_pay = '${}'.format(gross_pay)
+
+# # Write the details to excel file
+# working_hour_sheet.write(1, 0, start_date, date_style)
+# working_hour_sheet.write(1, 1, end_date, date_style)
+# working_hour_sheet.write(1, 2, gross_pay, style)
+
+# # Save the workbook
+# wb.save('xlwt work.xls')
+
+# # Print the resulst
+# print('You have worked for a total of {} hours on this task '.format(diff_date_hours))
+# print('Your total pay for working from {} to {} is ${} '.format(start_date, end_date, gross_pay))
 
 
 
