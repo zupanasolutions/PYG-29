@@ -97,7 +97,6 @@ def recordLogs():
                 wages = calculateWages(hours)
                 total_wages += wages
                 log = (date.strftime('%m/%d/%Y'), start_time.time().strftime('%H:%M'), end_time.time().strftime('%H:%M'), hours, "{:.2f}".format(wages))                
-                print(log)
                 logs.append(log)
             else:
                 raise ValueError("I do not understand that command. Please enter 'y' or 'n'")
